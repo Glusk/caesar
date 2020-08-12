@@ -3,6 +3,9 @@ jdk: oraclejdk11
 
 # Runs the default 'script': mvn test -B
 
+after_success:
+  - mvn clean test jacoco:report coveralls:report
+
 cache: 
   directories: 
     - $HOME/.m2

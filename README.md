@@ -3,6 +3,7 @@
 ![Logo](logo.png)
 
 [![Build Status](https://travis-ci.com/Glusk/caesar.svg?branch=master)](https://travis-ci.com/Glusk/caesar)
+[![Coverage Status](https://coveralls.io/repos/github/Glusk/caesar/badge.svg?branch=master)](https://coveralls.io/github/Glusk/caesar?branch=master)
 
 An object-oriented approach to cryptography in Java.
 
