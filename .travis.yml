@@ -1,0 +1,8 @@
+language: java
+jdk: oraclejdk11
+
+# Runs the default 'script': mvn test -B
+
+cache: 
+  directories: 
+    - $HOME/.m2
