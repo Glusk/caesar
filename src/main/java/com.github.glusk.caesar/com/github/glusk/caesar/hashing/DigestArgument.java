@@ -5,6 +5,7 @@ import java.nio.charset.StandardCharsets;
 
 import com.github.glusk.caesar.BinaryString;
 import com.github.glusk.caesar.Bytes;
+import com.github.glusk.caesar.Identity;
 
 /**
  * A message digest argument.
@@ -34,7 +35,7 @@ public final class DigestArgument implements Bytes {
      * @param charset the charset of {@code string}
      */
     public DigestArgument(final String string, final Charset charset) {
-        this(new Bytes.Identity(string.getBytes(charset)));
+        this(new Identity(string.getBytes(charset)));
     }
 
     /**
@@ -62,7 +63,7 @@ public final class DigestArgument implements Bytes {
      */
     @SuppressWarnings("checkstyle:hiddenfield")
     public DigestArgument(final byte... argument) {
-        this(new Bytes.Identity(argument));
+        this(new Identity(argument));
     }
 
     /**
