@@ -8,9 +8,9 @@
   <artifactId>caesar</artifactId>
   <version>0.0.1-SNAPSHOT</version>
 
-  <name>caesar</name>
-  <!-- FIXME change it to the project's website -->
-  <url>http://www.example.com</url>
+  <name>Caesar</name>
+  <description>An object-oriented approach to cryptography in Java.</description>
+  <url>https://github.com/Glusk/caesar</url>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
