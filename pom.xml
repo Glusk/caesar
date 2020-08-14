@@ -12,6 +12,13 @@
   <description>An object-oriented approach to cryptography in Java.</description>
   <url>https://github.com/Glusk/caesar</url>
 
+  <licenses>
+    <license>
+      <name>MIT License</name>
+      <url>http://www.opensource.org/licenses/mit-license.php</url>
+    </license>
+  </licenses>
+
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.release>11</maven.compiler.release>
