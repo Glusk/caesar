@@ -33,4 +33,13 @@ public class DigestArgumentTest {
             new DigestArgument("0a0b0c", 16).asArray()
         );
     }
+
+    @Test
+    public void properlyEncodesABase64StringArgument() {
+        assertArrayEquals(
+            "Base64 string argument was not properly encoded!",
+            new byte[] {10, 11, 12},
+            new DigestArgument("CgsM", 64).asArray()
+        );
+    }
 }

@@ -1,6 +1,8 @@
-package com.github.glusk.caesar;
+package com.github.glusk.caesar.internal;
 
 import jakarta.xml.bind.DatatypeConverter;
+
+import com.github.glusk.caesar.Bytes;
 
 /** {@code Bytes} backed by a binary string.*/
 public final class BinaryString implements Bytes {

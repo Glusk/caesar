@@ -1,4 +1,4 @@
-package com.github.glusk.caesar;
+package com.github.glusk.caesar.internal;
 
 import static org.junit.Assert.assertArrayEquals;
 

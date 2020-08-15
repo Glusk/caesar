@@ -1,4 +1,6 @@
-package com.github.glusk.caesar;
+package com.github.glusk.caesar.internal;
+
+import com.github.glusk.caesar.Bytes;
 
 /**
  * An identity relation implementation of the Bytes interface.
