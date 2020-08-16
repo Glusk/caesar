@@ -1,4 +1,4 @@
-package com.github.glusk.caesar;
+package com.github.glusk.caesar.internal;
 
 import static org.junit.Assert.assertArrayEquals;
 
@@ -15,7 +15,7 @@ public final class IdentityTest {
         assertArrayEquals(
             "Identity doesn't hold true!",
             argument,
-            new Bytes.Identity(argument).asArray()
+            new Identity(argument).asArray()
         );
     }
 }

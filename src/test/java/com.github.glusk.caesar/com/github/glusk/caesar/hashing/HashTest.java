@@ -5,7 +5,7 @@ import static org.junit.Assert.assertArrayEquals;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
-import com.github.glusk.caesar.BinaryString;
+import com.github.glusk.caesar.internal.BinaryString;
 
 import org.junit.Test;
 

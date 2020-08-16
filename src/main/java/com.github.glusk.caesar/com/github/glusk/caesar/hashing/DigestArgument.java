@@ -3,8 +3,9 @@ package com.github.glusk.caesar.hashing;
 import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 
-import com.github.glusk.caesar.BinaryString;
 import com.github.glusk.caesar.Bytes;
+import com.github.glusk.caesar.internal.BinaryString;
+import com.github.glusk.caesar.internal.Identity;
 
 /**
  * A message digest argument.
@@ -34,21 +35,16 @@ public final class DigestArgument implements Bytes {
      * @param charset the charset of {@code string}
      */
     public DigestArgument(final String string, final Charset charset) {
-        this(new Bytes.Identity(string.getBytes(charset)));
+        this(new Identity(string.getBytes(charset)));
     }
 
     /**
      * Creates a new DigestArgument from the specified {@code binaryString} in
      * a given {@code radix} (or base).
-     * <p>
-     * Equivalent to:
-     * <pre>
-     * new DigestArgument(
-     *     new BinaryString(binaryString, radix)
-     * );
-     * </pre>
+     *
      * @param binaryString binary string in {@code radix} base
-     * @param radix the radix in which {@code binaryString} is encoded
+     * @param radix The radix in which {@code binaryString} is encoded.
+     *              Currently, only radixes 16 and 64 are supported.
      */
     public DigestArgument(final String binaryString, final int radix) {
         this(new BinaryString(binaryString, radix));
@@ -62,7 +58,7 @@ public final class DigestArgument implements Bytes {
      */
     @SuppressWarnings("checkstyle:hiddenfield")
     public DigestArgument(final byte... argument) {
-        this(new Bytes.Identity(argument));
+        this(new Identity(argument));
     }
 
     /**

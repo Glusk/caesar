@@ -3,4 +3,7 @@
  */
 module com.github.glusk.caesar {
     requires jakarta.xml.bind;
+
+    exports com.github.glusk.caesar;
+    exports com.github.glusk.caesar.hashing;
 }

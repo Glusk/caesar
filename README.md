@@ -22,6 +22,18 @@ byte[] result =
         new DigestArgument("password123")
     ).asArray();
 ```
+You can also use `ImmutableMessageDigest`'s *fluid* API:
+``` java
+// MessageDigest md = ...
+
+byte[] result =
+    new ImmutableMessageDigest(md)
+        .update(new DigestArgument("password123"))
+        .digest();
+```
+
+### Embedded hashes
+
 You can pass the result of one hashing operation as an argument to
 another.
 
