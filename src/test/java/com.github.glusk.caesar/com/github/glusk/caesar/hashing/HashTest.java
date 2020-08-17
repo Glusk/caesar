@@ -1,13 +1,13 @@
 package com.github.glusk.caesar.hashing;
 
-import static org.junit.Assert.assertArrayEquals;
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
 import com.github.glusk.caesar.internal.BinaryString;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 public class HashTest {
     /**
@@ -31,7 +31,6 @@ public class HashTest {
             // SHA-1 implementation
         }
         assertArrayEquals(
-            "Embedded hash was not properly computed!",
             new BinaryString("94B7555AABE9127CC58CCF4993DB6CF84D16C124", 16).asArray(),
             new Hash(
                 imd,
@@ -40,7 +39,8 @@ public class HashTest {
                     imd,
                     new DigestArgument("alice:password123")
                 )
-            ).asArray()
+            ).asArray(),            
+            "Embedded hash was not properly computed!"
         );
     }
 }

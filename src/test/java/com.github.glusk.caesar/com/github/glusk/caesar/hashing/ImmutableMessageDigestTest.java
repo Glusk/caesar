@@ -1,11 +1,11 @@
 package com.github.glusk.caesar.hashing;
 
-import static org.junit.Assert.assertArrayEquals;
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 public final class ImmutableMessageDigestTest {
     @Test
@@ -25,9 +25,9 @@ public final class ImmutableMessageDigestTest {
         imd.update(new byte[1]);
         byte[] after = imd.digest();
         assertArrayEquals(
-            "The engine's state has been changed!",
             before,
-            after
+            after,
+            "The engine's state has been changed!"
         );
     }
 
@@ -45,9 +45,9 @@ public final class ImmutableMessageDigestTest {
         }
 
         assertArrayEquals(
-            "The engine's state has been changed!",
             imd.digest(),
-            imd.digest()
+            imd.digest(),
+            "The engine's state has been changed!"
         );
     }
 }

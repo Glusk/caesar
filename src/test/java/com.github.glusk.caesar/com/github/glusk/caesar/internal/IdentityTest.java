@@ -1,8 +1,8 @@
 package com.github.glusk.caesar.internal;
 
-import static org.junit.Assert.assertArrayEquals;
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 /** A test class for {@code Bytes.Identity}. */
 public final class IdentityTest {
@@ -13,9 +13,9 @@ public final class IdentityTest {
     public void identityHolds() {
         final byte[] argument = new byte[] {1, 2, 3};
         assertArrayEquals(
-            "Identity doesn't hold true!",
             argument,
-            new Identity(argument).asArray()
+            new Identity(argument).asArray(),
+            "Identity doesn't hold true!"
         );
     }
 }
