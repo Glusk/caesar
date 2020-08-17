@@ -5,6 +5,12 @@
 [![Build Status](https://travis-ci.com/Glusk/caesar.svg?branch=master)](https://travis-ci.com/Glusk/caesar)
 [![Coverage Status](https://coveralls.io/repos/github/Glusk/caesar/badge.svg?branch=master)](https://coveralls.io/github/Glusk/caesar?branch=master)
 
+[![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.github.glusk/caesar/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.github.glusk/caesar)
+[![javadoc](https://javadoc.io/badge2/com.github.glusk/caesar/javadoc.svg)](https://javadoc.io/doc/com.github.glusk/caesar)
+
+[![LoC](https://tokei.rs/b1/github/glusk/caesar)](https://github.com/Glusk/caesar)
+[![Hits-of-Code](https://hitsofcode.com/github/glusk/caesar?branch=master)](https://hitsofcode.com/view/github/glusk/caesar?branch=master)
+
 An object-oriented approach to cryptography in Java.
 
 ---
