@@ -19,6 +19,15 @@
     </license>
   </licenses>
 
+  <developers>
+    <developer>
+      <name>Janez Kuhar</name>
+      <email>janez.kuhar@protonmail.com</email>
+      <organization>Github</organization>
+      <organizationUrl>https://github.com/Glusk</organizationUrl>
+    </developer>
+  </developers>
+
   <scm>
     <connection>scm:git:https://github.com/Glusk/caesar.git</connection>
     <developerConnection>scm:git:https://github.com/Glusk/caesar.git</developerConnection>
