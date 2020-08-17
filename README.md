@@ -67,4 +67,35 @@ byte[] result =
         new DigestArgument(b3)
     ).asArray();
 ```
+
+## Releases
+
+Run this from the command line:
+
+```
+mvn release:prepare -DreleaseVersion=<TAG_NUMBER>
+```
+
+where `<TAG_NUMBER>` is the new [semver](http://www.semver.org) release number.
+
+The release plugin will:
+1. bump the project version to `<TAG_NUMBER>` and commit the change
+2. create a new tag `<TAG_NUMBER>`
+3. bump the version to `<TAG_NUMBER>-SNAPSHOT` and commit the change
+4. push to local commits and tag to remote origin
+
+The above steps will in turn trigger an automated deployment/publish proces on
+Travis CI and deploy a new release to Maven Central.
+
+You have to clean up afterward because we aren't using maven release plugin to
+deploy:
+
+```
+mvn release:clean
+```
+
+That's it!
+
+---
+
 <div>Logo icon made by <a href="https://www.flaticon.com/free-icon/caesar-cipher_1792163" title="Pixelmeetup">Pixelmeetup</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
