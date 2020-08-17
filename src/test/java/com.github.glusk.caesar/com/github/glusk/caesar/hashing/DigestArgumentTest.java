@@ -42,4 +42,13 @@ public class DigestArgumentTest {
             "Base64 string argument was not properly encoded!"
         );
     }
+
+    @Test
+    public void properlyEncodesAByteArrayArgument() {
+        assertArrayEquals(
+            new byte[] {10, 11, 12},
+            new DigestArgument(new byte[] {10, 11, 12}).asArray(),
+            "Byte array argument was not properly encoded!"
+        );
+    }
 }
