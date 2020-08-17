@@ -1,5 +1,5 @@
 #!/bin/bash
-version=$(mvn help:evaluate -Dexpression=project.version | grep -Ev '(^\[|Download\w+:)')
+version=$(mvn help:evaluate -Dexpression=project.version -q -DforceStdout)
 echo "Detected artifact version: $version"
 echo "Detected git TAG: $TRAVIS_TAG"
 # Only deploy if:
