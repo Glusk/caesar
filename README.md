@@ -3,6 +3,7 @@
 ![Logo](logo.png)
 
 [![Build Status](https://travis-ci.com/Glusk/caesar.svg?branch=master)](https://travis-ci.com/Glusk/caesar)
+[![Build status](https://ci.appveyor.com/api/projects/status/cb77die5i5srmj5s/branch/master?svg=true)](https://ci.appveyor.com/project/Glusk/caesar/branch/master)
 [![Coverage Status](https://coveralls.io/repos/github/Glusk/caesar/badge.svg?branch=master)](https://coveralls.io/github/Glusk/caesar?branch=master)
 
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.github.glusk/caesar/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.github.glusk/caesar)
