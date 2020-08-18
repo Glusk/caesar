@@ -4,8 +4,7 @@ init:
 # environment variables
 environment:
   MAVEN_VERSION: "3.6.3"
-  # https://downloads.apache.org/maven/maven-3/$env:MAVEN_VERSION/binaries/apache-maven-$env:MAVEN_VERSION-bin.zip
-  JAVA_HOME: "C:\Program Files\Java\jdk11"
+  JAVA_HOME: "C:\\Program Files\\Java\\jdk11"
 # build cache to preserve files/folders between builds
 cache:
   - C:\maven\
