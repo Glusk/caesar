@@ -71,31 +71,18 @@ byte[] result =
 
 ## Releases
 
-Run this from the command line:
+Use the [release](./release.sh) script with the following arguments:
+
+1. `release` - the next release version
+2. `snapshot` - the next snapshot version
+3. `dryRun` (optional) - if set to `true`, the changes will not be pushed
+   to the remote repository
+
+Example:
 
 ```
-mvn release:prepare -DreleaseVersion=<TAG_NUMBER>
+./release.sh 0.1.1 0.1.2-SNAPSHOT
 ```
-
-where `<TAG_NUMBER>` is the new [semver](http://www.semver.org) release number.
-
-The release plugin will:
-1. bump the project version to `<TAG_NUMBER>` and commit the change
-2. create a new tag `<TAG_NUMBER>`
-3. bump the version to `<TAG_NUMBER>-SNAPSHOT` and commit the change
-4. push to local commits and tag to remote origin
-
-The above steps will in turn trigger an automated deployment/publish proces on
-Travis CI and deploy a new release to Maven Central.
-
-You have to clean up afterward because we aren't using maven release plugin to
-deploy:
-
-```
-mvn release:clean
-```
-
-That's it!
 
 ---
 
