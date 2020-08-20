@@ -3,6 +3,7 @@ jdk: oraclejdk11
 
 after_success:
 - mvn test jacoco:report coveralls:report -B
+- bash <(curl -Ls https://coverage.codacy.com/get.sh)
 
 cache:
   directories:

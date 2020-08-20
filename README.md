@@ -4,6 +4,7 @@
 
 [![Build Status](https://travis-ci.com/Glusk/caesar.svg?branch=master)](https://travis-ci.com/Glusk/caesar)
 [![Build status](https://ci.appveyor.com/api/projects/status/kvotrwt9pqn0dbg5/branch/master?svg=true)](https://ci.appveyor.com/project/Glusk/caesar/branch/master)
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/36750977c17d4e238c343aac4d9913f2)](https://www.codacy.com/manual/Glusk/caesar?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Glusk/caesar&amp;utm_campaign=Badge_Grade)
 [![Coverage Status](https://coveralls.io/repos/github/Glusk/caesar/badge.svg?branch=master)](https://coveralls.io/github/Glusk/caesar?branch=master)
 
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.github.glusk/caesar/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.github.glusk/caesar)
