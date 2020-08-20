@@ -26,4 +26,8 @@ install:
   - cmd: java -version
 # to run your custom scripts instead of automatic MSBuild
 build_script:
-  - mvn clean install
+  - mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
+
+# to run your custom scripts instead of automatic tests
+test_script:
+  - mvn test -B
