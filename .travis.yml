@@ -1,10 +1,8 @@
 language: java
 jdk: oraclejdk11
 
-# Runs the default 'script': mvn test -B
-
 after_success:
-- mvn clean test jacoco:report coveralls:report
+- mvn test jacoco:report coveralls:report -B
 
 cache:
   directories:
