@@ -25,6 +25,8 @@ public final class Hex implements Bytes {
     private static final String HEX_PATTERN = "^[a-fA-F0-9]+$";
     /** Hexadecimal radix - 16. */
     private static final int HEX_RADIX = 16;
+    /** An integer bitmask with only the least significant 8 bits set. */
+    private static final int UNSIGNED_BYTE_BITMASK = 0xff;
 
     /** A hexadecimal encoded string that represents this byte sequence. */
     private final String hexString;
@@ -62,9 +64,11 @@ public final class Hex implements Bytes {
             int left = 2 * i;
             int right = 2 * i + 1;
             result[i] =
-                Byte.parseByte(
-                    zeroPadded.substring(left, right + 1),
-                    HEX_RADIX
+                (byte) (
+                    Integer.parseInt(
+                        zeroPadded.substring(left, right + 1),
+                        HEX_RADIX
+                    ) & UNSIGNED_BYTE_BITMASK
                 );
         }
         return result;
