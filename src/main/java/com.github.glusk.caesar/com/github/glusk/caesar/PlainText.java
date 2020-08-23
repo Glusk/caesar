@@ -3,12 +3,10 @@ package com.github.glusk.caesar;
 import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 
-import com.github.glusk.caesar.internal.Identity;
-
 /** A byte sequence constructed from plain text. */
 public final class PlainText implements Bytes {
     /** Byte sequence representation of {@code this} PlainText. */
-    private final Bytes argument;
+    private final Bytes plainTextAsBytes;
 
     /**
      * Creates a new byte sequence from an {@code utf8String}.
@@ -27,21 +25,11 @@ public final class PlainText implements Bytes {
      * @param charset the charset of {@code string}
      */
     public PlainText(final String string, final Charset charset) {
-        this(new Identity(string.getBytes(charset)));
-    }
-
-    /**
-     * Creates a new PlainText from the specified {@code argument}.
-     *
-     * @param argument the byte sequence argument
-     */
-    @SuppressWarnings("checkstyle:hiddenfield")
-    public PlainText(final Bytes argument) {
-        this.argument = argument;
+        this.plainTextAsBytes = new WrappedBytes(string.getBytes(charset));
     }
 
     @Override
     public byte[] asArray() {
-      return argument.asArray();
+      return plainTextAsBytes.asArray();
     }
 }
