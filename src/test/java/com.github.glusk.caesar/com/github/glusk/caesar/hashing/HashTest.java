@@ -7,7 +7,6 @@ import java.security.NoSuchAlgorithmException;
 
 import com.github.glusk.caesar.Hex;
 import com.github.glusk.caesar.PlainText;
-import com.github.glusk.caesar.internal.BinaryString;
 
 import org.junit.jupiter.api.Test;
 
@@ -33,7 +32,7 @@ public class HashTest {
             // SHA-1 implementation
         }
         assertArrayEquals(
-            new BinaryString("94B7555AABE9127CC58CCF4993DB6CF84D16C124", 16).asArray(),
+            new Hex("94B7555AABE9127CC58CCF4993DB6CF84D16C124").asArray(),
             new Hash(
                 imd,
                 new Hex("BEB25379D1A8581EB5A727673A2441EE"),
