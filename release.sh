@@ -21,7 +21,7 @@ mvn versions:set "-DnewVersion=$snapshot" "-DgenerateBackupPoms=false"
 git commit -am "Bumped project to a new snapshot version."
 
 # Push the new snapshot version and release tag if there were no errors
-if [ "$success" ] && [ ! "$dryRun" ]
+if [ "$success" ] && [ "$dryRun" = false ]
 then 
   git push origin "$release"
   git push origin master
