@@ -27,7 +27,7 @@ Hashing is easy with Caesar:
 byte[] result = 
     new Hash(
         new ImmutableMessageDigest(md),
-        new DigestArgument("password123")
+        new PlainText("password123")
     ).asArray();
 ```
 You can also use `ImmutableMessageDigest`'s *fluid* API:
@@ -36,7 +36,7 @@ You can also use `ImmutableMessageDigest`'s *fluid* API:
 
 byte[] result =
     new ImmutableMessageDigest(md)
-        .update(new DigestArgument("password123"))
+        .update(new PlainText("password123"))
         .digest();
 ```
 
@@ -58,16 +58,17 @@ This is how it would be done with Caesar:
 // byte[] b3 = ...
 ImmutableMessageDigest imd = new ImmutableMessageDigest(md);
 
-byte[] result = 
+System.out.println(
     new Hash(
         imd,
         new Hash(
             imd,
-            new DigestArgument(b1)
+            new WrappedBytes(b1)
         ),
-        new DigestArgument(b2),
-        new DigestArgument(b3)
-    ).asArray();
+        new WrappedBytes(b2),
+        new WrappedBytes(b3)
+    ).asHexString()
+);
 ```
 
 ## Releases
