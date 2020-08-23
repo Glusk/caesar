@@ -6,6 +6,7 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
 import com.github.glusk.caesar.Hex;
+import com.github.glusk.caesar.PlainText;
 import com.github.glusk.caesar.internal.BinaryString;
 
 import org.junit.jupiter.api.Test;
@@ -38,7 +39,7 @@ public class HashTest {
                 new Hex("BEB25379D1A8581EB5A727673A2441EE"),
                 new Hash(
                     imd,
-                    new DigestArgument("alice:password123")
+                    new PlainText("alice:password123")
                 )
             ).asArray(),            
             "Embedded hash was not properly computed!"
