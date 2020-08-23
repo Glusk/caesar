@@ -38,17 +38,6 @@ public final class DigestArgument implements Bytes {
     }
 
     /**
-     * Creates a new DigestArgument from the specified byte array
-     * {@code argument}.
-     *
-     * @param argument the byte array argument
-     */
-    @SuppressWarnings("checkstyle:hiddenfield")
-    public DigestArgument(final byte... argument) {
-        this(new Identity(argument));
-    }
-
-    /**
      * Creates a new DigestArgument from the specified {@code argument}.
      *
      * @param argument the byte sequence argument
