@@ -26,24 +26,6 @@ public class DigestArgumentTest {
     }
 
     @Test
-    public void properlyEncodesAHexStringArgument() {
-        assertArrayEquals(
-            new byte[] {10, 11, 12},
-            new DigestArgument("0a0b0c", 16).asArray(),
-            "Hex string argument was not properly encoded!"
-        );
-    }
-
-    @Test
-    public void properlyEncodesABase64StringArgument() {
-        assertArrayEquals(
-            new byte[] {10, 11, 12},
-            new DigestArgument("CgsM", 64).asArray(),
-            "Base64 string argument was not properly encoded!"
-        );
-    }
-
-    @Test
     public void properlyEncodesAByteArrayArgument() {
         assertArrayEquals(
             new byte[] {10, 11, 12},

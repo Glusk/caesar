@@ -5,6 +5,7 @@ import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
+import com.github.glusk.caesar.Hex;
 import com.github.glusk.caesar.internal.BinaryString;
 
 import org.junit.jupiter.api.Test;
@@ -34,7 +35,7 @@ public class HashTest {
             new BinaryString("94B7555AABE9127CC58CCF4993DB6CF84D16C124", 16).asArray(),
             new Hash(
                 imd,
-                new DigestArgument("BEB25379D1A8581EB5A727673A2441EE", 16),
+                new Hex("BEB25379D1A8581EB5A727673A2441EE"),
                 new Hash(
                     imd,
                     new DigestArgument("alice:password123")
