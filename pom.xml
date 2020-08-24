@@ -45,11 +45,6 @@
       <version>5.4.0</version>
       <scope>test</scope>
     </dependency>
-    <dependency>
-      <groupId>jakarta.xml.bind</groupId>
-      <artifactId>jakarta.xml.bind-api</artifactId>
-      <version>3.0.0-RC3</version>
-    </dependency>
   </dependencies>
 
   <build>
