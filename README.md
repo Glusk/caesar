@@ -63,10 +63,10 @@ System.out.println(
         imd,
         new Hash(
             imd,
-            new WrappedBytes(b1)
+            () -> b1
         ),
-        new WrappedBytes(b2),
-        new WrappedBytes(b3)
+        () -> b2,
+        () -> b3
     ).asHexString()
 );
 ```

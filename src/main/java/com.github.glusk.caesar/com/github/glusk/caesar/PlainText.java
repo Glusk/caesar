@@ -25,7 +25,7 @@ public final class PlainText implements Bytes {
      * @param charset the charset of {@code string}
      */
     public PlainText(final String string, final Charset charset) {
-        this.plainTextAsBytes = new WrappedBytes(string.getBytes(charset));
+        this.plainTextAsBytes = () -> string.getBytes(charset);
     }
 
     @Override
