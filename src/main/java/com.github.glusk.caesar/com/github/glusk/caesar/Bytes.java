@@ -4,6 +4,7 @@ package com.github.glusk.caesar;
  * The Caesar library type that represents an immutable sequence of
  * bytes.
  */
+@FunctionalInterface
 public interface Bytes {
     /**
      * Returns {@code this} byte sequence as an array.
