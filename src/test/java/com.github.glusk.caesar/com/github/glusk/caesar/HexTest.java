@@ -23,7 +23,7 @@ public class HexTest {
     @Test
     public void parsesANegativeByteValue()  {
         assertArrayEquals(
-            new byte[] { (byte) 0b10000000 },
+            new byte[] {(byte) 0b10000000},
             new Hex("80").asArray()
         );
     }

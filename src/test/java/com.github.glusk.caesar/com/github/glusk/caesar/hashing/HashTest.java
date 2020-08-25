@@ -40,7 +40,7 @@ public class HashTest {
                     imd,
                     new PlainText("alice:password123")
                 )
-            ).asArray(),            
+            ).asArray(),
             "Embedded hash was not properly computed!"
         );
     }
