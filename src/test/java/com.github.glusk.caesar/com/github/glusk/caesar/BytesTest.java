@@ -2,7 +2,6 @@ package com.github.glusk.caesar;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import com.github.glusk.caesar.Bytes;
 
 import org.junit.jupiter.api.Test;
 

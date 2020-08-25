@@ -10,7 +10,7 @@ import org.junit.jupiter.api.Test;
 
 public final class ImmutableMessageDigestTest {
     class UncloneableMessageDigest extends MessageDigest {
-        public UncloneableMessageDigest(String algorithm) {
+        UncloneableMessageDigest(final String algorithm) {
             super(algorithm);
         }
         @Override
@@ -22,11 +22,15 @@ public final class ImmutableMessageDigestTest {
             throw new UnsupportedOperationException();
         }
         @Override
-        protected void engineUpdate​(byte input) {
+        protected void engineUpdate​(final byte input) {
             throw new UnsupportedOperationException();
         }
         @Override
-        protected void engineUpdate​(byte[] input, int offset, int len) {
+        protected void engineUpdate​(
+            final byte[] input,
+            final int offset,
+            final int len
+        ) {
             throw new UnsupportedOperationException();
         }
         @Override
@@ -34,7 +38,7 @@ public final class ImmutableMessageDigestTest {
             throw new CloneNotSupportedException();
         }
     }
-    
+
     @Test
     public void updateDoesNotAlterTheEngineState() {
         ImmutableMessageDigest imd = null;
