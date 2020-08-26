@@ -35,7 +35,7 @@ try {
 }
 ```
 
-Once you obtain an `ImmutableMessageDigest` instance you can perform the hashing:
+Once you obtain an `ImmutableMessageDigest` instance, you can perform the hashing:
 
 ``` java
 // ImmutableMessageDigest imd = ...
