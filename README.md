@@ -39,13 +39,11 @@ Once you obtain an `ImmutableMessageDigest` instance, you can perform the hashin
 
 ``` java
 // ImmutableMessageDigest imd = ...
-
 Bytes result = new Hash(imd, new PlainText("password123"));
 ```
 You can also use `ImmutableMessageDigest`'s *fluid* API:
 ``` java
 // ImmutableMessageDigest imd = ...
-
 byte[] result = imd.update(new PlainText("password123")).digest();
 ```
 
