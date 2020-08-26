@@ -24,11 +24,11 @@ Hashing is easy with Caesar:
 ``` java
 // MessageDigest md = ...
 
-byte[] result = 
+Bytes result = 
     new Hash(
         new ImmutableMessageDigest(md),
         new PlainText("password123")
-    ).asArray();
+    );
 ```
 You can also use `ImmutableMessageDigest`'s *fluid* API:
 ``` java
@@ -58,7 +58,7 @@ This is how it would be done with Caesar:
 // byte[] b3 = ...
 ImmutableMessageDigest imd = new ImmutableMessageDigest(md);
 
-System.out.println(
+Bytes result = 
     new Hash(
         imd,
         new Hash(
@@ -67,8 +67,7 @@ System.out.println(
         ),
         () -> b2,
         () -> b3
-    ).asHexString()
-);
+    );
 ```
 
 ## Releases
