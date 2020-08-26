@@ -49,7 +49,7 @@ public final class ImmutableMessageDigest {
     }
 
     /**
-     * Updates {@code this} ImmutableMessage digest with {@code arguments} and
+     * Updates {@code this} ImmutableMessageDigest with {@code arguments} and
      * returns the result as a {@code new} ImmutableMessageDigest object.
      * <p>
      * Equivalent to:
@@ -63,8 +63,9 @@ public final class ImmutableMessageDigest {
      *
      * @param arguments an array of {@link Bytes} to feed to {@code this}
      *                  ImmutableMessageDigest object
-     * @return a {@code new} ImmutableMessageDigest object with the updated
-     *         engine
+     * @return a {@code new} ImmutableMessageDigest object that is the result
+     *         of updating the state of {@code this} object with
+     *         {@code arguments}
      */
     public ImmutableMessageDigest update(final Bytes... arguments) {
         ImmutableMessageDigest imd = this;
@@ -75,7 +76,7 @@ public final class ImmutableMessageDigest {
     }
 
     /**
-     * Updates {@code this} ImmutableMessage digest with the {@code argument}
+     * Updates {@code this} ImmutableMessageDigest with the {@code argument}
      * array and returns the result as a {@code new} ImmutableMessageDigest
      * object.
      * <p>
@@ -86,15 +87,16 @@ public final class ImmutableMessageDigest {
      *
      * @param argument the bytes to feed to {@code this} ImmutableMessageDigest
      *                 object
-     * @return a {@code new} ImmutableMessageDigest object with the updated
-     *         engine
+     * @return a {@code new} ImmutableMessageDigest object that is the result
+     *         of updating the state of {@code this} object with
+     *         {@code argument}
      */
     public ImmutableMessageDigest update(final byte[] argument) {
         return update(argument, 0, argument.length);
     }
 
     /**
-     * Updates {@code this} ImmutableMessage digest with the specified portion
+     * Updates {@code this} ImmutableMessageDigest with the specified portion
      * of the {@code argument} array and returns the result as a {@code new}
      * ImmutableMessageDigest object.
      *
@@ -102,8 +104,9 @@ public final class ImmutableMessageDigest {
      *                 object
      * @param offset the offset to start from in the {@code argument} array
      * @param len the number of bytes to use, starting at {@code offset}
-     * @return a {@code new} ImmutableMessageDigest object with the updated
-     *         engine
+     * @return a {@code new} ImmutableMessageDigest object that is the result
+     *         of updating the state of {@code this} object with the specified
+     *         portion of {@code argument} array
      */
     public ImmutableMessageDigest update(
         final byte[] argument,
@@ -121,10 +124,9 @@ public final class ImmutableMessageDigest {
     * <p>
     * Unlike with {@link java.security.MessageDigest#digest()}, there is no
     * engine reset. This method will always perform the computation on a fresh
-    * copy of an internal MessageDigest object to assure the correct hash.
+    * copy of an internal MessageDigest object to guarantee immutability.
     *
-    * @return byte array hash value that is the result of {@code this} message
-    *          digest
+    * @return the array of bytes for the resulting hash value
     */
     public byte[] digest() {
         return clone(this.md).digest();
