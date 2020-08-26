@@ -9,7 +9,7 @@ dryRun=${3:-false}
 #     version and tag it
 git checkout -b "$release-release"
 mvn versions:set "-DnewVersion=$release" "-DgenerateBackupPoms=false"
-# Build the project and aborts release on failure
+# Build the project and abort release on failure
 mvn clean install
 success=$?
 git commit -am "$release"
