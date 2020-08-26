@@ -19,25 +19,34 @@ An object-oriented approach to cryptography in Java.
 
 ## Hashing
 
-Hashing is easy with Caesar:
+In order to start using Caesar's hashing utilities you first have to wrap a `MessageDigest`
+instance inside a new [`ImmutableMessageDigest`](https://javadoc.io/doc/com.github.glusk/caesar/latest/com.github.glusk.caesar/com/github/glusk/caesar/hashing/ImmutableMessageDigest.html)
+object:
 
 ``` java
-// MessageDigest md = ...
+ImmutableMessageDigest imd = null;
+try {
+    imd =
+        new ImmutableMessageDigest(
+            MessageDigest.getInstance(/* ... */)
+        );
+} catch (Exception e) {
+   // error handling
+}
+```
 
-Bytes result = 
-    new Hash(
-        new ImmutableMessageDigest(md),
-        new PlainText("password123")
-    );
+Once you obtain an `ImmutableMessageDigest` instance you can perform the hashing:
+
+``` java
+// ImmutableMessageDigest imd = ...
+
+Bytes result = new Hash(imd, new PlainText("password123"));
 ```
 You can also use `ImmutableMessageDigest`'s *fluid* API:
 ``` java
-// MessageDigest md = ...
+// ImmutableMessageDigest imd = ...
 
-byte[] result =
-    new ImmutableMessageDigest(md)
-        .update(new PlainText("password123"))
-        .digest();
+byte[] result = imd.update(new PlainText("password123")).digest();
 ```
 
 ### Embedded hashes
@@ -52,11 +61,10 @@ H(H(b1), b2, b3)
 
 This is how it would be done with Caesar:
 ``` java
-// MessageDigest md = ...
 // byte[] b1 = ...
 // byte[] b2 = ...
 // byte[] b3 = ...
-ImmutableMessageDigest imd = new ImmutableMessageDigest(md);
+// ImmutableMessageDigest imd = ...
 
 Bytes result = 
     new Hash(
