@@ -14,6 +14,24 @@ public interface Bytes {
     byte[] asArray();
 
     /**
+     * Returns a new byte sequence which contains elements of {@code this}
+     * sequence in reverse order.
+     *
+     * @return a new byte sequence with elements in reversed order
+     */
+    default Bytes reversed() {
+        byte[] reversed = this.asArray();
+
+        for (int i = 0; i < reversed.length / 2; i++) {
+            byte tmp = reversed[i];
+            reversed[i] = reversed[reversed.length - 1 - i];
+            reversed[reversed.length - 1 - i] = tmp;
+        }
+
+        return () -> reversed;
+    }
+
+    /**
      * Encodes this byte sequence as a hex string and returns it.
      * <p>
      * The string returned conforms to the specification described in
