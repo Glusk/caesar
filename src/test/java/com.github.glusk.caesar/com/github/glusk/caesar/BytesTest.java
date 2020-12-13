@@ -35,11 +35,11 @@ public class BytesTest {
     @Test
     public void reversesASequenceWithOneElement() {
         assertArrayEquals(
-            new byte[0],
+            new byte[1],
             new Bytes() {
                 @Override
                 public byte[] asArray() {
-                    return new byte[0];
+                    return new byte[1];
                 }
             }.reversed().asArray()
         );
