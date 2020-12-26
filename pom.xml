@@ -5,7 +5,7 @@
 
   <groupId>com.github.glusk</groupId>
   <artifactId>caesar</artifactId>
-  <version>0.4.1-SNAPSHOT</version>
+  <version>0.4.2-SNAPSHOT</version>
 
   <name>Caesar</name>
   <description>An object-oriented approach to cryptography in Java.</description>
