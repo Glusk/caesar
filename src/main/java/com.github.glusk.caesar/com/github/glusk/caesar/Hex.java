@@ -33,6 +33,11 @@ public final class Hex implements Bytes {
 
     /**
      * Constructs a new byte sequence from {@code hexString}.
+     * <p>
+     * Refer to class-level documentation about the valid format of a hex
+     * string.
+     * <p>
+     * Any white space characters in the argument string will be discarded.
      *
      * @param hexString a hexadecimal encoded string argument
      * @throws IllegalArgumentException if {@code hexString} is not a valid
@@ -40,15 +45,16 @@ public final class Hex implements Bytes {
      */
     @SuppressWarnings("checkstyle:hiddenfield")
     public Hex(final String hexString) {
-        if (!hexString.matches(HEX_PATTERN)) {
+        String noWhiteSpace = hexString.replaceAll("\\s", "");
+        if (!noWhiteSpace.matches(HEX_PATTERN)) {
             throw new IllegalArgumentException(
                 String.format(
                     "'%s' is not a valid hex string!",
-                    hexString
+                    noWhiteSpace
                 )
             );
         }
-        this.hexString = hexString;
+        this.hexString = noWhiteSpace;
     }
 
     @Override
