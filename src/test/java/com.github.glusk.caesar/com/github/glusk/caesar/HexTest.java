@@ -35,4 +35,11 @@ public class HexTest {
             new Hex("0A 0B\t0C\r\n0D").asHexString()
         );
     }
+    @Test
+    public void discardsArgumentColons() {
+        assertEquals(
+            "0A0B0C0D",
+            new Hex("0A:0B:0C:0D").asHexString()
+        );
+    }
 }

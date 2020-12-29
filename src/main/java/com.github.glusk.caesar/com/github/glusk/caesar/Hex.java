@@ -37,6 +37,8 @@ public final class Hex implements Bytes {
      * Refer to class-level documentation about the valid format of a hex
      * string.
      * <p>
+     * Any colons in the argument string will be discarded.
+     * <p>
      * Any white space characters in the argument string will be discarded.
      *
      * @param hexString a hexadecimal encoded string argument
@@ -45,7 +47,8 @@ public final class Hex implements Bytes {
      */
     @SuppressWarnings("checkstyle:hiddenfield")
     public Hex(final String hexString) {
-        String noWhiteSpace = hexString.replaceAll("\\s", "");
+        String noColons = hexString.replaceAll(":", "");
+        String noWhiteSpace = noColons.replaceAll("\\s", "");
         if (!noWhiteSpace.matches(HEX_PATTERN)) {
             throw new IllegalArgumentException(
                 String.format(
