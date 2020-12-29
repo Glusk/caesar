@@ -37,6 +37,8 @@ public final class Hex implements Bytes {
      * Refer to class-level documentation about the valid format of a hex
      * string.
      * <p>
+     * Any colons in the argument string will be discarded.
+     * <p>
      * Any white space characters in the argument string will be discarded.
      *
      * @param hexString a hexadecimal encoded string argument
