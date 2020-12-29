@@ -45,7 +45,8 @@ public final class Hex implements Bytes {
      */
     @SuppressWarnings("checkstyle:hiddenfield")
     public Hex(final String hexString) {
-        String noWhiteSpace = hexString.replaceAll("\\s", "");
+        String noColons = hexString.replaceAll(":", "");
+        String noWhiteSpace = noColons.replaceAll("\\s", "");
         if (!noWhiteSpace.matches(HEX_PATTERN)) {
             throw new IllegalArgumentException(
                 String.format(
