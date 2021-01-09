@@ -17,7 +17,7 @@ public class XorTest {
         );
     }
     @Test
-    public void xorOfAnEmptyByteSequenceIsAnEmptyByteSequence() {
+    public void xorOfTwoEmptyByteSequencesIsAnEmptyByteSequence() {
         assertArrayEquals(
             new byte[0],
             new Xor(
@@ -42,6 +42,15 @@ public class XorTest {
             new byte[] {1, 0, 1, 0},
             new Xor(
                 () -> new byte[] {1, 0, 1, 0}
+            ).asArray()
+        );
+    }
+    @Test
+    public void voidArgsProduceAnEmptyByteSequence() {
+        assertArrayEquals(
+            new byte[0],
+            new Xor(
+                new Bytes[0]
             ).asArray()
         );
     }

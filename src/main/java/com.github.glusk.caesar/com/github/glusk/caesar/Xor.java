@@ -6,7 +6,7 @@ package com.github.glusk.caesar;
  * This implementation performs a per-byte xor operation on byte sequences of
  * equal length.
  * <p>
- * Xor of am empty byte sequences is an empty byte sequence.
+ * Xor of two empty byte sequences is an empty byte sequence.
  */
 public final class Xor implements Bytes {
     /** The arguments to {@code this} xor operation. */
