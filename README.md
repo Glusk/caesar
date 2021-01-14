@@ -24,15 +24,10 @@ instance inside a new [`ImmutableMessageDigest`](https://javadoc.io/doc/com.gith
 object:
 
 ``` java
-ImmutableMessageDigest imd = null;
-try {
-    imd =
-        new ImmutableMessageDigest(
-            MessageDigest.getInstance(/* ... */)
-        );
-} catch (Exception e) {
-   // error handling
-}
+ImmutableMessageDigest imd
+    new ImmutableMessageDigest(
+        MessageDigest.getInstance(/* ... */)
+    );
 ```
 
 Once you obtain an `ImmutableMessageDigest` instance, you can perform the hashing:
