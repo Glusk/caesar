@@ -76,6 +76,22 @@ Bytes result =
     );
 ```
 
+### HMAC
+
+This is how you compute `HMAC("Key", "Message")` with Caesar, using the
+`SHA-256` hash function:
+
+``` java
+Bytes hmac =
+    new Hmac(
+        new ImmutableMessageDigest(
+            MessageDigest.getInstance("SHA-256")
+        ),
+        new PlainText("Key"),
+        new PlainText("Message")
+    );
+```
+
 ## Releases
 
 Use the [release](./release.sh) script with the following arguments:
