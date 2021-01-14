@@ -24,7 +24,7 @@ instance inside a new [`ImmutableMessageDigest`](https://javadoc.io/doc/com.gith
 object:
 
 ``` java
-ImmutableMessageDigest imd
+ImmutableMessageDigest imd =
     new ImmutableMessageDigest(
         MessageDigest.getInstance(/* ... */)
     );
