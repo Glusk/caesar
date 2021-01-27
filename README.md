@@ -17,6 +17,15 @@ An object-oriented approach to cryptography in Java.
 
 ---
 
+## Motivation
+
+This project aims to replace/wrap the following JDK APIs: 
+[`MessageDigest`](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/security/MessageDigest.html),
+[`Mac`](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/javax/crypto/Mac.html) and
+[`Cipher`](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/javax/crypto/Cipher.html).
+
+[cactoos-crypto](https://github.com/g4s8/cactoos-crypto) is a direct alternative to this project.
+
 ## Hashing
 
 In order to start using Caesar's hashing utilities you first have to wrap a `MessageDigest`
