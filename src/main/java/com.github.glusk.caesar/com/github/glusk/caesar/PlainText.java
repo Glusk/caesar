@@ -4,7 +4,7 @@ import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 
 /** A byte sequence constructed from plain text. */
-public final class PlainText implements Bytes {
+public final class PlainText extends AbstractBytes {
     /** Byte sequence representation of {@code this} PlainText. */
     private final Bytes plainTextAsBytes;
 
@@ -25,7 +25,13 @@ public final class PlainText implements Bytes {
      * @param charset the charset of {@code string}
      */
     public PlainText(final String string, final Charset charset) {
-        this.plainTextAsBytes = () -> string.getBytes(charset);
+        this.plainTextAsBytes =
+            new AbstractBytes() {
+                @Override
+                public byte[] asArray() {
+                    return string.getBytes(charset);
+                }
+            };
     }
 
     @Override

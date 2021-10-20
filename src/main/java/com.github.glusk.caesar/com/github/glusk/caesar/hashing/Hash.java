@@ -1,9 +1,10 @@
 package com.github.glusk.caesar.hashing;
 
+import com.github.glusk.caesar.AbstractBytes;
 import com.github.glusk.caesar.Bytes;
 
 /** A byte sequence that is the result of a hashing operation. */
-public final class Hash implements Bytes {
+public final class Hash extends AbstractBytes {
     /** The ImmutableMessageDigest instance to perform the hashing with. */
     private final ImmutableMessageDigest imd;
     /** The hash arguments list. */

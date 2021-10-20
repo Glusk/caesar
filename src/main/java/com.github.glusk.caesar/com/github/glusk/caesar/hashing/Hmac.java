@@ -1,5 +1,6 @@
 package com.github.glusk.caesar.hashing;
 
+import com.github.glusk.caesar.AbstractBytes;
 import com.github.glusk.caesar.Bytes;
 import com.github.glusk.caesar.Hex;
 import com.github.glusk.caesar.Xor;
@@ -28,7 +29,7 @@ import com.github.glusk.caesar.Xor;
  *
  * @see BlockSizedHmacKey
  */
-public final class Hmac implements Bytes {
+public final class Hmac extends AbstractBytes {
     /** The default block-size. */
     private static final int DEFAULT_BLOCK_SIZE = 64;
 
