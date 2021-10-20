@@ -11,7 +11,7 @@ public class BytesTest {
     public void properlyEncodesAHexString() {
         assertEquals(
             "0A0B0C",
-            new Bytes() {
+            new AbstractBytes() {
                 @Override
                 public byte[] asArray() {
                     return new byte[] {10, 11, 12};
@@ -24,7 +24,7 @@ public class BytesTest {
     public void reversesAnEmptySequence() {
         assertArrayEquals(
             new byte[0],
-            new Bytes() {
+            new AbstractBytes() {
                 @Override
                 public byte[] asArray() {
                     return new byte[0];
@@ -36,7 +36,7 @@ public class BytesTest {
     public void reversesASequenceWithOneElement() {
         assertArrayEquals(
             new byte[1],
-            new Bytes() {
+            new AbstractBytes() {
                 @Override
                 public byte[] asArray() {
                     return new byte[1];
@@ -48,7 +48,7 @@ public class BytesTest {
     public void reversesASequence() {
         assertArrayEquals(
             new byte[] {3, 2, 1},
-            new Bytes() {
+            new AbstractBytes() {
                 @Override
                 public byte[] asArray() {
                     return new byte[] {1, 2, 3};
