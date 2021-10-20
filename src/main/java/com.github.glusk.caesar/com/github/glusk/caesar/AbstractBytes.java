@@ -6,8 +6,8 @@ import java.util.Arrays;
  * This class provides a skeletal implementation of the {@link Bytes}
  * interface to minimize the effort required to implement this interface.
  * <p>
- * Method `equals()` is already implemented as per the specification in
- * {@link Bytes}.
+ * Method `equals()` and `hashCode` are already implemented as per the
+ * specification in {@link Bytes}.
  */
 public abstract class AbstractBytes implements Bytes {
     /**
