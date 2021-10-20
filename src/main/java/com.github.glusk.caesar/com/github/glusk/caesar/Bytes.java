@@ -27,7 +27,13 @@ public interface Bytes {
             reversed[reversed.length - 1 - i] = tmp;
         }
 
-        return () -> reversed;
+        return
+            new AbstractBytes() {
+                @Override
+                public byte[] asArray() {
+                    return reversed;
+                }
+            };
     }
 
     /**
