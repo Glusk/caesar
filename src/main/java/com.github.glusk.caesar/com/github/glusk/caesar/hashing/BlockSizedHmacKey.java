@@ -1,5 +1,6 @@
 package com.github.glusk.caesar.hashing;
 
+import com.github.glusk.caesar.AbstractBytes;
 import com.github.glusk.caesar.Bytes;
 
 import java.util.Arrays;
@@ -15,7 +16,7 @@ import java.util.Arrays;
  * with zeros.
  * </q></em>
  */
-public final class BlockSizedHmacKey implements Bytes {
+public final class BlockSizedHmacKey extends AbstractBytes {
     /** Hash function. */
     private final ImmutableMessageDigest hashFunction;
     /** Secret key - {@code K}. */

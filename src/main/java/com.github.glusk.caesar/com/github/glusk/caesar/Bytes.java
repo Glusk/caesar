@@ -4,7 +4,6 @@ package com.github.glusk.caesar;
  * The Caesar library type that represents an immutable sequence of
  * bytes.
  */
-@FunctionalInterface
 public interface Bytes {
     /**
      * Returns {@code this} byte sequence as an array.
@@ -28,7 +27,13 @@ public interface Bytes {
             reversed[reversed.length - 1 - i] = tmp;
         }
 
-        return () -> reversed;
+        return
+            new AbstractBytes() {
+                @Override
+                public byte[] asArray() {
+                    return reversed;
+                }
+            };
     }
 
     /**
@@ -47,4 +52,29 @@ public interface Bytes {
         }
         return sb.toString();
     }
+
+    /**
+     * Returns {@code true} if and only if {@code this} and {@code obj} are
+     * both byte sequence objects and {@code this.asArray()} element-wise
+     * equals {@code ((Bytes) obj).asArray()}.
+     *
+     * @param obj the object to be compared for equality with this byte
+     *            sequence
+     * @return {@code true} if the specified object is equal to this byte
+     *         sequence
+     */
+    @Override
+    boolean equals(Object obj);
+
+    /**
+     * Returns the hash code value for this byte sequence.
+     * <p>
+     * The hash code of a byte sequence has to obey the general contract of
+     * {@link Object#hashCode}. That is, if two byte sequences are equal, then
+     * they must have the same hash code.
+     *
+     * @return the hash code value for this byte sequence
+     */
+    @Override
+    int hashCode();
 }

@@ -8,7 +8,7 @@ package com.github.glusk.caesar;
  * <p>
  * Xor of two empty byte sequences is an empty byte sequence.
  */
-public final class Xor implements Bytes {
+public final class Xor extends AbstractBytes {
     /** The arguments to {@code this} xor operation. */
     private final Bytes[] args;
 

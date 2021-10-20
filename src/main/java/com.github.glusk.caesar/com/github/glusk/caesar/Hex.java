@@ -18,7 +18,7 @@ package com.github.glusk.caesar;
  * <p>
  * An empty string ({@code ""}) is not a valid hexadecimal string.
  */
-public final class Hex implements Bytes {
+public final class Hex extends AbstractBytes {
     /**
      * A regex pattern to check the validity of the input {@code hexString}.
      */
