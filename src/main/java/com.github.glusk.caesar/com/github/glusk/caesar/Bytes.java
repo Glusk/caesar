@@ -4,7 +4,6 @@ package com.github.glusk.caesar;
  * The Caesar library type that represents an immutable sequence of
  * bytes.
  */
-@FunctionalInterface
 public interface Bytes {
     /**
      * Returns {@code this} byte sequence as an array.
@@ -47,4 +46,17 @@ public interface Bytes {
         }
         return sb.toString();
     }
+
+    /**
+     * Returns {@code true} if and only if {@code this} and {@code obj} are
+     * both byte sequence objects and {@code this.asArray()} element-wise
+     * equals {@code ((Bytes) obj).asArray()}.
+     *
+     * @param obj the object to be compared for equality with this byte
+     *            sequence
+     * @return {@code true} if the specified object is equal to this byte
+     *         sequence
+     */
+    @Override
+    boolean equals(Object obj);
 }
