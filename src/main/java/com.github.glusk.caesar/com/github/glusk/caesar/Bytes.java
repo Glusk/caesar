@@ -65,4 +65,16 @@ public interface Bytes {
      */
     @Override
     boolean equals(Object obj);
+
+    /**
+     * Returns the hash code value for this byte sequence.
+     * <p>
+     * The hash code of a byte sequence has to obey the general contract of
+     * {@link Object#hashCode}. That is, if two byte sequences are equal, then
+     * they must have the same hash code.
+     *
+     * @return the hash code value for this byte sequence
+     */
+    @Override
+    int hashCode();
 }

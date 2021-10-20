@@ -38,4 +38,20 @@ public abstract class AbstractBytes implements Bytes {
         Bytes that = (Bytes) obj;
         return Arrays.equals(this.asArray(), that.asArray());
     }
+
+    /**
+     * {@inheritDoc}
+     * <p>
+     * <strong>Implementation Note:</strong><br>
+     * The hash code of a byte sequence is defined as:
+     * <pre>
+     * Arrays.hashCode(this.asArray());
+     * </pre>
+     *
+     * @return the hash code value for this byte sequence
+     */
+    @Override
+    public final int hashCode() {
+        return Arrays.hashCode(this.asArray());
+    }
 }
