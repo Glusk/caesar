@@ -18,7 +18,7 @@ public class AbstractBytesTest {
         assertTrue(b.equals(b));
     }
     @Test
-    public void comparisonToNullYieldsFalse() {
+    public void comparisonToObjectOfAnotherTypeYieldsFalse() {
         Bytes b =
             new AbstractBytes() {
                 @Override
@@ -26,7 +26,7 @@ public class AbstractBytesTest {
                     return new byte[]{1};
                 }
             };
-        assertFalse(b.equals(null));
+        assertFalse(b.equals("1"));
     }
     @Test
     public void differentObjectsWithSameArrayEqual() {
