@@ -11,9 +11,7 @@ import java.util.Arrays;
  */
 public abstract class AbstractBytes implements Bytes {
     /**
-     * Returns {@code true} if and only if {@code this} and {@code obj} are
-     * both byte sequence objects and {@code this.asArray()} element-wise
-     * equals {@code ((Bytes) obj).asArray()}.
+     * {@inheritDoc}
      * <p>
      * <strong>Implementation Notes:</strong><br>
      * This implementation first checks if the specified object is this
