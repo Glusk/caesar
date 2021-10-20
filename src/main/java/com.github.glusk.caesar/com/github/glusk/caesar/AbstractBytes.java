@@ -19,11 +19,6 @@ public abstract class AbstractBytes implements Bytes {
      * specified object is a byte sequence. If not, it returns {@code false};
      * if so, it compares the corresponding byte arrays
      * ({@link Bytes#asArray()}) via {@code Arrays.equals()}.
-     *
-     * @param obj the object to be compared for equality with this byte
-     *            sequence
-     * @return {@code true} if the specified object is equal to this byte
-     *         sequence
      */
     @Override
     public final boolean equals(final Object obj) {
@@ -45,8 +40,6 @@ public abstract class AbstractBytes implements Bytes {
      * <pre>
      * Arrays.hashCode(this.asArray());
      * </pre>
-     *
-     * @return the hash code value for this byte sequence
      */
     @Override
     public final int hashCode() {
