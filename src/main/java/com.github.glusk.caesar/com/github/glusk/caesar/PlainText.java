@@ -25,13 +25,7 @@ public final class PlainText extends AbstractBytes {
      * @param charset the charset of {@code string}
      */
     public PlainText(final String string, final Charset charset) {
-        this.plainTextAsBytes =
-            new AbstractBytes() {
-                @Override
-                public byte[] asArray() {
-                    return string.getBytes(charset);
-                }
-            };
+        this.plainTextAsBytes = Bytes.wrapped(string.getBytes(charset));
     }
 
     @Override

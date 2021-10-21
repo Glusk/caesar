@@ -11,12 +11,7 @@ public class BytesTest {
     public void properlyEncodesAHexString() {
         assertEquals(
             "0A0B0C",
-            new AbstractBytes() {
-                @Override
-                public byte[] asArray() {
-                    return new byte[] {10, 11, 12};
-                }
-            }.asHexString(),
+            Bytes.wrapped(new byte[] {10, 11, 12}).asHexString(),
             "Bytes were not properly encoded to a hex string!"
         );
     }
@@ -24,36 +19,21 @@ public class BytesTest {
     public void reversesAnEmptySequence() {
         assertArrayEquals(
             new byte[0],
-            new AbstractBytes() {
-                @Override
-                public byte[] asArray() {
-                    return new byte[0];
-                }
-            }.reversed().asArray()
+            Bytes.wrapped(new byte[0]).reversed().asArray()
         );
     }
     @Test
     public void reversesASequenceWithOneElement() {
         assertArrayEquals(
             new byte[1],
-            new AbstractBytes() {
-                @Override
-                public byte[] asArray() {
-                    return new byte[1];
-                }
-            }.reversed().asArray()
+            Bytes.wrapped(new byte[1]).reversed().asArray()
         );
     }
     @Test
     public void reversesASequence() {
         assertArrayEquals(
             new byte[] {3, 2, 1},
-            new AbstractBytes() {
-                @Override
-                public byte[] asArray() {
-                    return new byte[] {1, 2, 3};
-                }
-            }.reversed().asArray()
+            Bytes.wrapped(new byte[] {1, 2, 3}).reversed().asArray()
         );
     }
 }
