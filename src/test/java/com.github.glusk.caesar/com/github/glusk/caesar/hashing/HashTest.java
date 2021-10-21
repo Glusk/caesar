@@ -1,6 +1,6 @@
 package com.github.glusk.caesar.hashing;
 
-import static org.junit.jupiter.api.Assertions.assertArrayEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
@@ -31,8 +31,8 @@ public class HashTest {
             // Should not happen; every JVM implementation must provide an
             // SHA-1 implementation
         }
-        assertArrayEquals(
-            new Hex("94B7555AABE9127CC58CCF4993DB6CF84D16C124").asArray(),
+        assertEquals(
+            new Hex("94B7555AABE9127CC58CCF4993DB6CF84D16C124"),
             new Hash(
                 imd,
                 new Hex("BEB25379D1A8581EB5A727673A2441EE"),
@@ -40,7 +40,7 @@ public class HashTest {
                     imd,
                     new PlainText("alice:password123")
                 )
-            ).asArray(),
+            ),
             "Embedded hash was not properly computed!"
         );
     }
