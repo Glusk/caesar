@@ -27,13 +27,7 @@ public interface Bytes {
             reversed[reversed.length - 1 - i] = tmp;
         }
 
-        return
-            new AbstractBytes() {
-                @Override
-                public byte[] asArray() {
-                    return reversed;
-                }
-            };
+        return Bytes.wrapped(reversed);
     }
 
     /**
@@ -51,6 +45,27 @@ public interface Bytes {
             sb.append(String.format("%02X", b));
         }
         return sb.toString();
+    }
+
+    /**
+     * Wraps an arbitrary number of bytes into a new byte sequence and
+     * returns it.
+     * <p>
+     * If an array is passed as an argument to this method, is must not be
+     * modified afterward. Doing so breaks the identity of the byte sequence
+     * returned by this method.
+     *
+     * @param bytes the bytes to wrap into a byte sequence
+     * @return wrapped bytes as a new byte sequence
+     */
+    static Bytes wrapped(final byte... bytes) {
+        return
+            new AbstractBytes() {
+                @Override
+                public byte[] asArray() {
+                    return bytes.clone();
+                }
+            };
     }
 
     /**
