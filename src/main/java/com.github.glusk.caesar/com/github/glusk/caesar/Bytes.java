@@ -54,6 +54,27 @@ public interface Bytes {
     }
 
     /**
+     * Wraps an arbitrary number of bytes into a new byte sequence and
+     * returns it.
+     * <p>
+     * If an array is passed as an argument to this method, is must not be
+     * modified afterward. Doing so breaks the identity of the byte sequence
+     * returned by this method.
+     *
+     * @param bytes the bytes to wrap into a byte sequence
+     * @return wrapped bytes as a new byte sequence
+     */
+    static Bytes wrapped(final byte... bytes) {
+        return
+            new AbstractBytes() {
+                @Override
+                public byte[] asArray() {
+                    return bytes.clone();
+                }
+            };
+    }
+
+    /**
      * Returns {@code true} if and only if {@code this} and {@code obj} are
      * both byte sequence objects and {@code this.asArray()} element-wise
      * equals {@code ((Bytes) obj).asArray()}.
