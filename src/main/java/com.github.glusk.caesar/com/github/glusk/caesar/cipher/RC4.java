@@ -43,7 +43,7 @@ public final class RC4 implements ImmutableCipher {
     }
 
     @Override
-    public Bytes doFinal() {
+    public Bytes output() {
         return this.output;
     }
 }

@@ -13,7 +13,7 @@ public class RC4Test {
         assertEquals(
             new RC4(new PlainText("Key"))
                 .update(new PlainText("Plaintext"))
-                .doFinal(),
+                .output(),
             new Hex("BBF316E8D940AF0AD3")
         );
     }
@@ -22,7 +22,7 @@ public class RC4Test {
         assertEquals(
             new RC4(new PlainText("Wiki"))
                 .update(new PlainText("pedia"))
-                .doFinal(),
+                .output(),
             new Hex("1021BF0420")
         );
     }
@@ -31,7 +31,7 @@ public class RC4Test {
         assertEquals(
             new RC4(new PlainText("Secret"))
                 .update(new PlainText("Attack at dawn"))
-                .doFinal(),
+                .output(),
             new Hex("45A01F645FC35B383552544B9BF5")
         );
     }
