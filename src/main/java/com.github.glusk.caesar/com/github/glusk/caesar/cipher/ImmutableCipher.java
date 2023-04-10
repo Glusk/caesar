@@ -5,9 +5,19 @@ import com.github.glusk.caesar.Bytes;
 /**
  * An Immutable Cipher.
  * <p>
- * Methods {@code init()}, {@code update()}, and {@code doFinal()} follow
- * the naming convention of the Java Standard Library class
- * {@code javax.crypto.Cipher}.
+ * This interface has been modeled after the {@code javax.crypto.Cipher}.
+ * The naming convention for the three key methods of that class:
+ * <ul>
+ *   <li>{@code init()},</li>
+ *   <li>{@code update()}, and</li>
+ *   <li>{@code doFinal()}</li>
+ * </ul>
+ * has been followed closely with some crucial changes.
+ * <p>
+ * A call to {@code ImmutableCipher#update()} advances the engine state and
+ * <em>returns a new ImmutableCipher object</em>. This is different to what
+ * the Java Standard Library class {@code Cipher} does, where the state of the
+ * <em>existing</em> {@code Cipher} object is updated.
  */
 interface ImmutableCipher {
     ImmutableCipher init(Bytes key);
