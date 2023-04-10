@@ -11,8 +11,7 @@ public class RC4Test {
     @Test
     public void wikiTestVector1() {
         assertEquals(
-            new RC4()
-                .init(new PlainText("Key"))
+            new RC4(new PlainText("Key"))
                 .update(new PlainText("Plaintext"))
                 .doFinal(),
             new Hex("BBF316E8D940AF0AD3")
@@ -21,8 +20,7 @@ public class RC4Test {
     @Test
     public void wikiTestVector2() {
         assertEquals(
-            new RC4()
-                .init(new PlainText("Wiki"))
+            new RC4(new PlainText("Wiki"))
                 .update(new PlainText("pedia"))
                 .doFinal(),
             new Hex("1021BF0420")
@@ -31,8 +29,7 @@ public class RC4Test {
     @Test
     public void wikiTestVector3() {
         assertEquals(
-            new RC4()
-                .init(new PlainText("Secret"))
+            new RC4(new PlainText("Secret"))
                 .update(new PlainText("Attack at dawn"))
                 .doFinal(),
             new Hex("45A01F645FC35B383552544B9BF5")
