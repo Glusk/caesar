@@ -3,6 +3,18 @@ package com.github.glusk.caesar.cipher;
 import com.github.glusk.caesar.Bytes;
 import com.github.glusk.caesar.Xor;
 
+/**
+ * An RC4 Cipher implementation.
+ * <p>
+ * <strong>Security Considerations</strong><br>
+ * From <a href="https://www.rfc-editor.org/rfc/rfc6229#section-3">RFC 6229| 3. Security Considerations</a>:<br>
+ * <em><q>
+ * The RC4 algorithm does not meet the basic criteria required for an
+ * encryption algorithm, as its output is distinguishable from random.
+ * The use of RC4 continues to be recommended against; in particular,
+ * its use in new specifications is discouraged.
+ * </q></em>
+ */
 public final class RC4 implements ImmutableCipher {
     private final Bytes S;
     private final int i;
