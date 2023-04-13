@@ -21,6 +21,15 @@ public final class RC4InitialState extends AbstractBytes {
     public byte[] asArray() {
         byte[] S = new byte[STATE_ARRAY_SIZE];
         byte[] k = key.asArray();
+        if (k.length < 1 || k.length > STATE_ARRAY_SIZE) {
+            throw new IllegalArgumentException(
+                String.format(
+                    "Invalid key length: %d. The valid range is: "
+                  + "1 ≤ key length ≤ 256.",
+                    k.length
+                )
+            );
+        }
         for (int i = 0; i < S.length; i++) {
             S[i] = (byte) i;
         }
