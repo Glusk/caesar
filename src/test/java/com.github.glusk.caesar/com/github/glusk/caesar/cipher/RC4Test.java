@@ -7,6 +7,7 @@ import java.nio.ByteBuffer;
 
 import org.junit.jupiter.api.Test;
 
+import com.github.glusk.caesar.Bytes;
 import com.github.glusk.caesar.Hex;
 import com.github.glusk.caesar.PlainText;
 
@@ -17,6 +18,13 @@ public class RC4Test {
         0x2f0, 0x300, 0x3f0, 0x400, 0x5f0, 0x600,
         0x7f0, 0x800, 0xbf0, 0xc00, 0xff0, 0x1000
     };
+    @Test
+    public void noOutputIfNoInput() {
+        assertEquals(
+            new RC4(new PlainText("Key")).output(),
+            Bytes.wrapped(new byte[0])
+        );
+    }
     @Test
     public void wikiTestVector1() {
         assertEquals(
