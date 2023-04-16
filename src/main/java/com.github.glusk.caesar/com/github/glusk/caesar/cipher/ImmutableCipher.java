@@ -14,33 +14,45 @@ import com.github.glusk.caesar.Bytes;
  * </ul>
  * has been followed closely with some crucial changes.
  * <p>
- * Immutable Cipher can be thought of as a state machine.
- * <p>
  * Method {@code init()} is not part of ImmutableCipher. Implementations
  * of this interface are expected to perform all the necessary initialization
  * in their corresponding constructors.
  * <p>
- * Every call to
- * {@code update()} updates the current state with {@code input} bytes
- * and returns it as a new state. This is different to what
+ * Every call to {@code update()} encrypts or decrypts {@code input} Bytes.
+ * The result is a {@code new} ImmutableCipher object with the updated state
+ * and the {@code output()} that corresponds to the {@code input}.
+ * <p>
+ * This is different to what
  * the Java Standard Library class {@code Cipher} does, where the state of the
  * <em>existing</em> {@code Cipher} object is updated.
  * <p>
- * Every call to {@code output()} outputs either the cipher output for the
- * current state.
- * <p>
- * Calls to {@code update()} can be chained but output does not carry over to
- * the next state, only the state does. Consider the following code snippet:
+ * Calls to {@code update()} can be chained. In that case, only the output
+ * of the last encryption/decryption operation can be retrieved.
+ * Consider the following code snippet:
  * <pre>
  * // ImmutableCipher cipher = ...
  * // Bytes i1 = ...
  * // Bytes i2 = ...
- * Bytes output = cipher.update(i1).update(i2).output();
+ * Bytes result = cipher.update(i1).update(i2).output();
  * </pre>
- * In the example above, {@code output} only holds the result of
- * encrypting/decrypting {@code i2}.
+ * In the example above, {@code result} holds the encrypted/decrypted Bytes
+ * for input {@code i2}.
  */
 interface ImmutableCipher {
+    /**
+     * Creates and returns a new ImmutableCipher that's the result of
+     * processing {@code this} ImmutableCipher with {@code input} Bytes.
+     *
+     * @param input the encrypted or decrypted message to process by
+     *              {@code this} ImmutableCipher
+     * @return a new ImmutableCipher that's the result of updating {@code this}
+     *         ImmutableCipher with {@code input} bytes.
+     */
     ImmutableCipher update(Bytes input);
+    /**
+     * Returns the output of {@code this} ImmutableCipher.
+     *
+     * @return the encrypted or decrypted message
+     */
     Bytes output();
 }
