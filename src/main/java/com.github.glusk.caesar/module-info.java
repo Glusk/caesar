@@ -3,5 +3,6 @@
  */
 module com.github.glusk.caesar {
     exports com.github.glusk.caesar;
+    exports com.github.glusk.caesar.cipher;
     exports com.github.glusk.caesar.hashing;
 }

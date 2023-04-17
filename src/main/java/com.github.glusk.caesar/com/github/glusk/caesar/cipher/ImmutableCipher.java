@@ -38,7 +38,7 @@ import com.github.glusk.caesar.Bytes;
  * In the example above, {@code result} holds the encrypted/decrypted Bytes
  * for input {@code i2}.
  */
-interface ImmutableCipher {
+public interface ImmutableCipher {
     /**
      * Creates and returns a new ImmutableCipher that's the result of
      * processing {@code this} ImmutableCipher with {@code input} Bytes.
