@@ -35,7 +35,7 @@ public final class RC4 implements ImmutableCipher {
      * Create a new RC4 Cipher by providing the {@code key} to initialize
      * the internal cipher state.
      *
-     * @param key
+     * @param key the key used to initialize {@code this} RC4 cipher
      */
     public RC4(final Bytes key) {
         this(new RC4InitialState(key), 0, 0, Bytes.wrapped(new byte[0]));

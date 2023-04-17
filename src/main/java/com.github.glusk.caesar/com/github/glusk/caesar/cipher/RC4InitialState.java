@@ -9,7 +9,7 @@ import com.github.glusk.caesar.Bytes;
  * This class implements the "Key-scheduling algorithm (KSA)" and "produces"
  * the initial state - "S" - for the specified RC4 {@code key}.
  * <p>
- * More info: https://en.wikipedia.org/wiki/RC4#Key-scheduling_algorithm_(KSA)
+ * More info: <a href="https://en.wikipedia.org/wiki/RC4#Key-scheduling_algorithm_(KSA)">https://en.wikipedia.org/wiki/RC4#Key-scheduling_algorithm_(KSA)</a>
  */
 public final class RC4InitialState extends AbstractBytes {
     /** An integer bitmask with only the least significant 8 bits set. */
