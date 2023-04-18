@@ -8,7 +8,7 @@ import com.github.glusk.caesar.Bytes;
 
 public class RC4InitialStateTest {
     @Test
-    public void throwsIfKeyIfKeyLengthIsZero() {
+    public void throwsIfKeyLengthIsZero() {
         assertThrows(
             IllegalArgumentException.class,
             () -> {
@@ -19,7 +19,7 @@ public class RC4InitialStateTest {
         );
     }
     @Test
-    public void throwsIfKeyIfKeyLengthIsGreaterThan256() {
+    public void throwsIfKeyLengthIsGreaterThan256() {
         assertThrows(
             IllegalArgumentException.class,
             () -> {
