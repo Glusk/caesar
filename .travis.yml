@@ -28,7 +28,6 @@ deploy:
       condition: $TRAVIS_TAG =~ ^[0-9]+.[0-9]+.[0-9]+$ # Only deploy tags that match something like 1.0.0
   - provider: script
     script: bash deploy.sh
-    skip_cleanup: true
     on:
       repo: Glusk/caesar
       branch: master
