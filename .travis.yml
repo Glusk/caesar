@@ -1,4 +1,3 @@
-# For free OSS builds
 os: linux
 arch:
   - arm64
@@ -23,7 +22,6 @@ before_deploy:
 deploy:
   - provider: script
     script: bash deploy.sh
-    skip_cleanup: true
     on:
       tags: true
       repo: Glusk/caesar
