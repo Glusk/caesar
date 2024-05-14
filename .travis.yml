@@ -1,3 +1,9 @@
+os: linux
+arch:
+  - arm64
+  - ppc64le
+  - s390x
+
 language: java
 jdk: oraclejdk11
 
@@ -16,14 +22,12 @@ before_deploy:
 deploy:
   - provider: script
     script: bash deploy.sh
-    skip_cleanup: true
     on:
       tags: true
       repo: Glusk/caesar
       condition: $TRAVIS_TAG =~ ^[0-9]+.[0-9]+.[0-9]+$ # Only deploy tags that match something like 1.0.0
   - provider: script
     script: bash deploy.sh
-    skip_cleanup: true
     on:
       repo: Glusk/caesar
       branch: master
